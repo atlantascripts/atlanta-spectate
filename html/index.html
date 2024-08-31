@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spectate Menu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</head>
+
+<body class="text-white font-sans h-screen flex items-center justify-center select-none">
+    <div class="bg-neutral-800 p-6 rounded-lg shadow-lg w-full max-w-7xl flex flex-col max-h-[80vh]">
+        <header class="flex items-center justify-between mb-4">
+            <div class="flex items-center">
+                <img src="img/logo.png" alt="Logo" class="h-12 w-12 mr-4">
+                <h1 class="text-xl font-semibold text-gray-300">Spectate Menu</h1>
+            </div>
+
+            <div class="flex-grow max-w-md">
+                <input id="searchBar" type="text" placeholder="Search..." class="w-full p-2 bg-neutral-900 text-gray-300 border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-gray-500">
+            </div>
+
+            <div class="flex items-center space-x-4">
+                <div class="relative flex items-center">
+                    <div class="w-4 h-4 bg-green-500 rounded-full animate-ping"></div>
+                    <span id="playerCount" class="ml-6 text-gray-300"></span>
+                </div>
+                <button class="text-gray-300 text-2xl transition-all hover:text-red-600 hover:scale-110" onclick="closeMenu()">&times;</button>
+            </div>
+        </header>
+
+        <div class="flex-grow overflow-x-auto overflow-y-auto">
+            <table class="w-full border-collapse bg-neutral-900 text-left text-sm text-gray-300 text-center">
+                <thead class="bg-neutral-700 text-xs uppercase text-gray-400">
+                    <tr>
+                        <th class="px-6 py-3 text-center">ID</th>
+                        <th class="px-6 py-3">NAME</th>
+                        <th class="px-6 py-3">RP NAME</th>
+                        <th class="px-6 py-3">GROUP</th>
+                        <th class="px-6 py-3">JOB</th>
+                        <th class="px-6 py-3">MONEY</th>
+                        <th class="px-6 py-3">BANK</th>
+                        <th class="px-6 py-3">SPECTATE</th>
+                    </tr>
+                </thead>
+                <tbody id="player-list">
+
+                </tbody>
+            </table>
+        </div>
+
+        <div id="spectateOffContainer" class="mt-2 flex justify-center" style="display: none;">
+            <button id="spectateOffButton" class="bg-red-600 hover:bg-red-700 text-white font-semibold py-1 px-3 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-1 transition-transform transform hover:scale-105">
+                Leave Spectate
+            </button>
+        </div>        
+    </div>
+</body>
+
+</html>
